@@ -1,0 +1,170 @@
+@charset "utf-8";
+/* CSS Document */
+/* Simple fluid media
+   Note: Fluid media requires that you remove the media's height and width attributes from the HTML
+   http://www.alistapart.com/articles/fluid-images/ 
+*/
+img, object, embed, video {
+	max-width: 100%;
+}
+
+/* IE 6 does not support max-width so default to width 100% */
+.ie6 img {
+	width:100%;
+}
+*  {list-style-type: none;
+	font-weight: bold;
+	margin: 0 auto;}
+	
+.html{ font-size: 100%;}
+
+.fluid {
+	clear: both;
+	margin-left: 0;
+	width: 100%;
+	float: left;
+	display: block;
+}
+
+.fluidList {
+    list-style:none;
+    list-style-image:none;
+    margin:0;
+    padding:0;        
+}
+
+.gridContainer {
+	width: 88.5%;
+	max-width: 1366px;
+	background-color:#050;
+	padding-left: 0.75%;
+	padding-right: 0.75%;
+	margin: auto;
+	clear: none;
+	float: none;
+	margin-left: auto;
+}
+	
+#header{
+	width: 100%;
+	height: 250px;
+	background-color: #FF0000;
+}
+.logotrans{
+	z-index: -20;
+	float: left;
+	clear:none;}
+	
+.lema{z-index:-10;float:left;clear:none;}
+
+.buseta{z-index:100;clear:none;}
+
+.andando{
+	float: left;
+	clear: none;
+	position: absolute;
+	z-index: 99;
+	-webkit-animation-name: moviendo; /* El nombre del efecto que estamos agregando */
+	-webkit-animation-duration: 10s; /* Tiempo que durará la animación */
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-direction: normal;
+	margin-top: 50px;
+}
+
+@-webkit-keyframes  moviendo {
+	
+	from{left:-20px;}
+	to{left:900px; overflow-x:hidden;}
+}
+.menu{
+	display: inline;
+	font-size: 100%;
+	text-align: center;
+	position: relative;
+	top: -35px;
+	margin: 0 auto;
+}
+.fontsmall{font-size:80%;}
+
+ul li.nivel1 {margin-bottom:auto;
+	float: left;}
+
+ul li a {
+	width: 170px;
+	display: block;
+	text-align: center;
+	color: #fff;
+	background-color: #00F;
+	border: solid 1px #fff;
+	position: relative;
+}
+
+ul li:hover {position: relative;}
+
+ul li a:hover, ul li:hover a.nivel1 {
+									background-color: #333;
+									text-decoration:none;}
+	
+ul li a.nivel1 { position: relative;}
+	
+ul li ul {display: none;}
+
+ul li a:hover ul, ul li:hover ul {
+	
+	display:block;
+	margin:0 auto;
+	position:absolute;
+	z-index:99;
+	}
+	
+ul li ul li a { width:250px;
+				padding: 6px 0px 8px 0px;
+				border-top-color: #000;}
+				
+ul li ul li a:hover { border-top-color: #000;
+					  position: relative;}
+
+
+ #contenido {clear:none;
+		width: 100%;
+		margin: 0 auto;
+		color: #FFFF00;
+		font-size: 90%;
+		text-align: justify;}
+
+.menu2{	width: 25%;
+	font-size: 100%;
+	text-align: center;
+	position: relative;
+	margin-right:5%;
+	clear: left;
+	float:left;}
+	
+.contenido{	min-height:500px;
+			font-size:80%;
+			float:left;
+			max-width: 70%;
+			margin:0 auto;}	
+
+#rutas ul li a{
+	width: 250px;
+	display: block;
+	text-align: center;
+	color: #0000FF;
+	background-color: #FF0;
+	border: 1px solid #390;
+	position: relative;
+}		
+
+		
+#footer{color:#FFF;
+		height:260px;
+		clear:both;
+		background-color:#FF0000;
+		font-size:80%;}
+		
+#aboutme{float: right;}
+
+		
+.address{text-align:center;}

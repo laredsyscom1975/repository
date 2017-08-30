@@ -1,0 +1,7 @@
+.fondotierra{background-color:#DBA901;}
+.fondoverde{background-color:#01DF01;}
+.fondoazul{background-color:#0040FF;}
+.centrado{text-align:center;}
+.cubrir{width: 100%;min-height: 100%;background: url(images/aerofoto.jpg) no-repeat center center fixed;}
+.nav navbar-nav li a ul li a: hover{background-color:#01DF01;}
+.dropdown-menu li a:hover{background-color:#01DF01;}
