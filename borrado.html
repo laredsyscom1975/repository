@@ -28,35 +28,17 @@
           
        </div>
                   <div class="col-sm-5  ">
-                  <H6> HACER UN CRUD BASICO EN PHP</h6>
+                  <H6> Borrado de registros en mysql con php</h6>
                   <p >
-                      
-
-Primero vamos a ver un pequeño tutorial de cómo hacer las operaciones en mysql sin php, para posteriormente empezar a codificar las operaciones en php.<br>
-<a href="https://youtu.be/QNSQwzQ5_Qk?t=7" target="blank"class="btn btn-default">https://youtu.be/QNSQwzQ5_Qk?t=7</a><br>
-Es de notar que ya nosotros en este momento damos por sentado que ya sabemos crear las paginas html y sabemos cómo enlazar el código o archivos php, que como sabemos muy bien lo podemos hacer desde formularios html.<br>
-Tomado de http://www.santiagocarlos.com.ve/detalle/video-tutorial-7-curso-de-php-estructurado-y-mysqli.html<br>
-Para trabajar con bases de datos, lo primero que tenemos que hacer es guardar datos en una de las tablas de nuestra base de datos. Así en nuestra base de datos hemos creado una tabla con 4 campos, que son:
-id – de tipo numérico (int) y autoincremental y nos servirá de clave primaria de la tabla.
-nombre – de tipo varchar con 25 caracteres
-email - de tipo varchar con 50 caracteres
-fecha - de tipo varchar con 25 caracteres
-Esta es una tabla muy sencilla, pero lo suficiente para explicar como se guardan los datos en la tabla de la base de datos.
-Una vez tenemos nuestra base de datos con nuestra tabla ya creada, configuramos los archivos de conexión a la base de datos, tal y como ya explicamos aquí.
-Es importante destacar, que dado que el id es de tipo autoincremntal, no hace falta enviarle ese dato a la tabla de base de datos, ya que los valores autoincrementales los genera la misma tabla cuando se realiza un registro.
-Para introducir los datos, lo primero que necesitamos es un formulario que nos permita recoger los datos.
-Este formulario lo enviaremos por el método POST a la página que guardará los datos, en nuestro caso, registra.php.
-La página que registra los datos - registra.php - contiene en primer lugar la recepción de las variables por POST, hemos extraído la fecha mediante la función – date – y la hemos guardado en la variable fecha. En segundo lugar, mediante include, accedemos al archivo de apertura y cierre de conexión de la base de datos. Por supuesto, ni que decir tiene que la apertura debe estar antes de la consulta a la base de datos, y el cierre, estarán después de la consulta a la base de datos.
-La variable - $_GRABAR_SQL - contiene la consulta que propiamente guarda los registros en la base de datos. Mediante – insert into – y la variable que contiene el nombre de la tabla especificamos el nombre de los campos donde guardaremos los datos. Tras ese paréntesis, nombramos las variables que contienen los valores que guardaremos en los mencionados campos.
-Por último, mostramos un mensaje que indica que los datos se han guardado correctamente.
+            
                   </p>
                   </div>
        <div class="col-sm-1 ">
            <a href="index.html" class="btn btn-default">Inicio</a><br>
-           <a href="#" class="btn btn-default">Insertar</a><br>
+           <a href="insercion.html" class="btn btn-default">Insertar</a><br>
            <a href="lectura.html" class="btn btn-default">Leer</a><br>
            <a href="actualizacion.html" class="btn btn-default">Actualizar</a><br>
-           <a href="borrado.html" class="btn btn-default">Eliminar</a>
+           <a href="#" class="btn btn-default">Eliminar</a>
        </div>
                 
              
