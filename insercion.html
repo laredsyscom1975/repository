@@ -16,7 +16,7 @@
     
     
    <div class="row col-sx-12 col-sm-push-12 col-md-push-12 col-lg-push-12 ">      <!-- bloque para titulares-->
-  		<h1 class="centrado" >Diseño web 1</h1>	  			
+  		<h3 class="centrado" >Diseño web 1</h3>	  			
    </div>
        
         
@@ -25,25 +25,36 @@
     
        <!-- este es el body de la pagina -->
        <div class="col-sm-12 ">
+          
        </div>
                   <div class="col-sm-5  ">
                   <H6> HACER UN CRUD BASICO EN PHP</h6>
                   <p >
                       
-Profundizaremos aún más con las bases de datos MySQL, aprenderemos sobre las operaciones CRUD en bases de datos. CRUD es el acrónimo de las palabras en inglés (Create,Read,Update,Delete) en español serían (Crear,Leer,Actualizar,Borrar).
-Veremos cómo buscar información en las tablas de la base de datos. Aprenderemos a modificar registros, aprenderemos también a filtrar registros dentro de nuestras consultas. Borraremos registros dentro de nuestra tabla.
-Decimos  PHP y MySQL pero en realidad vamos a trabajar con MySQLi que es simplemente una extensión de MySQL, es una version mejorada de MySQL ya que algunas funciones de MySQL quedaron obsoletas. 
-MySQLi es más seguro. No cambiaremos nuestra forma de trabajar, así que no debes preocuparte. 
+
 Primero vamos a ver un pequeño tutorial de cómo hacer las operaciones en mysql sin php, para posteriormente empezar a codificar las operaciones en php.<br>
 <a href="https://youtu.be/QNSQwzQ5_Qk?t=7" target="blank"class="btn btn-default">https://youtu.be/QNSQwzQ5_Qk?t=7</a><br>
 Es de notar que ya nosotros en este momento damos por sentado que ya sabemos crear las paginas html y sabemos cómo enlazar el código o archivos php, que como sabemos muy bien lo podemos hacer desde formularios html.<br>
-Tomado de http://www.santiagocarlos.com.ve/detalle/video-tutorial-7-curso-de-php-estructurado-y-mysqli.html
-
+Tomado de http://www.santiagocarlos.com.ve/detalle/video-tutorial-7-curso-de-php-estructurado-y-mysqli.html<br>
+Para trabajar con bases de datos, lo primero que tenemos que hacer es guardar datos en una de las tablas de nuestra base de datos. Así en nuestra base de datos hemos creado una tabla con 4 campos, que son:
+id – de tipo numérico (int) y autoincremental y nos servirá de clave primaria de la tabla.
+nombre – de tipo varchar con 25 caracteres
+email - de tipo varchar con 50 caracteres
+fecha - de tipo varchar con 25 caracteres
+Esta es una tabla muy sencilla, pero lo suficiente para explicar como se guardan los datos en la tabla de la base de datos.
+Una vez tenemos nuestra base de datos con nuestra tabla ya creada, configuramos los archivos de conexión a la base de datos, tal y como ya explicamos aquí.
+Es importante destacar, que dado que el id es de tipo autoincremntal, no hace falta enviarle ese dato a la tabla de base de datos, ya que los valores autoincrementales los genera la misma tabla cuando se realiza un registro.
+Para introducir los datos, lo primero que necesitamos es un formulario que nos permita recoger los datos.
+Este formulario lo enviaremos por el método POST a la página que guardará los datos, en nuestro caso, registra.php.
+La página que registra los datos - registra.php - contiene en primer lugar la recepción de las variables por POST, hemos extraído la fecha mediante la función – date – y la hemos guardado en la variable fecha. En segundo lugar, mediante include, accedemos al archivo de apertura y cierre de conexión de la base de datos. Por supuesto, ni que decir tiene que la apertura debe estar antes de la consulta a la base de datos, y el cierre, estarán después de la consulta a la base de datos.
+La variable - $_GRABAR_SQL - contiene la consulta que propiamente guarda los registros en la base de datos. Mediante – insert into – y la variable que contiene el nombre de la tabla especificamos el nombre de los campos donde guardaremos los datos. Tras ese paréntesis, nombramos las variables que contienen los valores que guardaremos en los mencionados campos.
+Por último, mostramos un mensaje que indica que los datos se han guardado correctamente.
                   </p>
                   </div>
        <div class="col-sm-1 ">
-           <a href="" class="btn btn-default">Insertar</a><br>
-           <a href="" class="btn btn-default">Leer</a><br>
+           <a href="index.html" class="btn btn-default">Inicio</a><br>
+           <a href="#" class="btn btn-default">Insertar</a><br>
+           <a href="leer.html" class="btn btn-default">Leer</a><br>
            <a href="" class="btn btn-default">Actualizar</a><br>
            <a href="" class="btn btn-default">Eliminar</a>
        </div>
@@ -55,18 +66,7 @@ Tomado de http://www.santiagocarlos.com.ve/detalle/video-tutorial-7-curso-de-php
          <p class="margen20"> 
         
         
-Para trabajar con bases de datos, lo primero que tenemos que hacer es guardar datos en una de las tablas de nuestra base de datos. Así en nuestra base de datos hemos creado una tabla con 4 campos, que son:
-id – de tipo numérico (int) y autoincremental y nos servirá de clave primaria de la tabla.
-nombre – de tipo varchar con 25 caracteres
-email - de tipo varchar con 50 caracteres
-fecha - de tipo varchar con 25 caracteres
-Esta es una tabla muy sencilla, pero lo suficiente para explicar como se guardan los datos en la tabla de la base de datos.
-Una vez tenemos nuestra base de datos con nuestra tabla ya creada, configuramos los archivos de conexión a la base de datos, tal y como ya explicamos aquí.
-Es importante destacar, que dado que el id es de tipo autoincremntal, no hace falta enviarle ese dato a la tabla de base de datos, ya que los valores autoincrementales los genera la misma tabla cuando se realiza un registro.
-Para introducir los datos, lo primero que necesitamos es un formulario que nos permita recoger los datos. Este formulario lo enviaremos por el método POST a la página que guardará los datos, en nuestro caso, registra.php.
-La página que registra los datos - registra.php - contiene en primer lugar la recepción de las variables por POST, hemos extraído la fecha mediante la función – date – y la hemos guardado en la variable fecha. En segundo lugar, mediante include, accedemos al archivo de apertura y cierre de conexión de la base de datos. Por supuesto, ni que decir tiene que la apertura debe estar antes de la consulta a la base de datos, y el cierre, estarán después de la consulta a la base de datos.
-La variable - $_GRABAR_SQL - contiene la consulta que propiamente guarda los registros en la base de datos. Mediante – insert into – y la variable que contiene el nombre de la tabla especificamos el nombre de los campos donde guardaremos los datos. Tras ese paréntesis, nombramos las variables que contienen los valores que guardaremos en los mencionados campos.
-Por último, mostramos un mensaje que indica que los datos se han guardado correctamente.
+ 
  Ampliación del código de registro de datos:
 El código presentado, si bien es correcto, tiene un gran problema, y es que no protege la entrada de datos, por lo que cualquier usuario malintencionado puede tratar de sabotear el funcionamiento de nuestra Web, lo que no es deseable.
 Aunque la base de datos que usamos para las demostraciones es independiente de la que gestiona el funcionamiento de esta Web, se ha decidido agregar algunas medidas elementales de protección de los registros dados los ataques sufridos, que por otro lado, a tratarse de una base de datos independiente, no han afectado en medida alguna al funcionamiento de esta Web.
@@ -81,13 +81,14 @@ El código es el siguiente:<br>
 
 
   
-   
-        <footer class ="pie row">
+      <div class="col-sm-12 pie ">
+        <footer>
             <p>Dise&ntildeado por Jes&uacutes Bola&ntildeo</p>
             <p>Contactenos en laredsyscom@gmail.com</p>
             <p>Hecho con Bootstrap 2017</p>
             <p>Todos los Derechos reservados</p>
         </footer>
+      </div>
 <script src = "js/jquery-3.2.1.min.js"></script>
 <script src = "js/bootstrap.min.js"></script>
 

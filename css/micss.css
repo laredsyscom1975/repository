@@ -3,5 +3,6 @@
 .fondoazul{background-color:#005b90;color :#ffffff;}
 .centrado{text-align:center;}
 .letrablanca{color:#ffffff;}
-.pie{font-size:80%;}
+.pie{font-size:80%;background-color:#cccccc;}
 .margen20{padding-left:20px;}
+.forzada{overflow:auto;}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <title>OviUnad</title>
+   <link href="css/bootstrap.css" rel="stylesheet">
+   <link href="css/micss.css" rel="stylesheet">
+</head>
+
+<body class="container-fluid fondoazul">
+        <header > <!-- bloque para imagen expandida-->
+        <div class=" col-sx-12 col-sm-12 col-md-12 col-lg-12 ">
+            <img src ="images/banner-unad.png" class="img-fluid " >
+        </div>
+        </header>
+    
+    
+   <div class="row col-sx-12 col-sm-push-12 col-md-push-12 col-lg-push-12 ">      <!-- bloque para titulares-->
+  		<h3 class="centrado" >Diseño web 1</h3>	  			
+   </div>
+       
+        
+   
+   
+    
+       <!-- este es el body de la pagina -->
+       <div class="col-sm-12 ">
+         
+       </div>
+                  <div class="col-sm-5  ">
+                  <H6>Leer datos de una base de datos en php</h6>
+                  <p >
+                      
+Una vez que hemos guardado nuestros datos en la base de datos, lo siguiente es poder ver esos datos impresos en una página. Para esto debemos hacer una consulta de lectura de base de datos con una estructura que determine que datos vamos a ver y bajo qué condiciones.
+
+Te en cuenta que presentamos este código como continuación del caso de registro de datos en una base de datos, usamos los mismos campos la misma base de datos y la misma tabla.
+
+Aunque nuestra base de datos por simplicidad no incluye un campo sexo, podemos hacer un condicional para que se muestren los datos de solo uno de los sujetos guardados o podemos mostrar los datos que corresponden a un determinado id o email. Esto es precisamente lo que vamos a ver en este artículo.
+
+Para presentar los datos en pantalla hemos creado una sencilla tabla HTML donde vamos a organizar los resultados.
+
+Puede verse como tenemos antes del código PHP que contiene la consulta a la base de datos, el código HTML de cualquier página Web y la parte superior de una tabla donde están marcados los nombres de cada columna con el dato que contendrán.
+
+Seguidamente vemos la consulta, que está marcada en el código como tal, y después un bucle WHILE que nos escribirá los datos tantas veces como registros (filas) haya en la base de datos para esa consulta. A continuación aparece el “echo” que imprime los datos de la consulta, derramos la conexión y PHP y terminamos de escribir la página.
+
+En este código, lo único que tiene que cambiar para que los datos que recuperemos sean unos y no otros es la línea de consulta propiamente dicha.
+Así podemos hacer varios tipos ve consultas, veamos algunas:
+
+Muestra todos los registros en sentido id ascendente.
+$query = "select * from $tabla_db1"; 
+
+Muestra cinco registros comenzando por el primero que es el cero.
+$query = "select * from $tabla_db1 LIMIT 0,5"; 
+
+Muestra dos registros a partir del registro numero 3.
+$query = "select * from $tabla_db1 LIMIT 3,2";
+Mostramos 20 registros en sentido de id descendente.
+$query = "select * from $tabla_db1 ORDER BY id DESC LIMIT 20";
+Muestra dos registros a partir del registro numero 3 pero en sentido de id descendente.
+$query = "select * from $tabla_db1 ORDER BY id DESC LIMIT 3,2"; 
+
+Muestra los resultados donde el nombre es Pedro.
+$query = "select * from $tabla_db1 WHERE nombre = 'Pedro'"; 
+
+Muestra los resultados donde el id vale 3 y el nombre es Pedro.
+$query = "select * from $tabla_db1 WHERE id = '3' and nombre = 'Pedro'";
+
+Muy importante, ten en cuenta que el primer registro es el cero no el uno, así una consulta LIMIT 0,1 te imprimirá el primer registro, es decir el que tiene como valor del id el 1.
+
+Así el código será el siguiente:
+
+                  </p>
+                  </div>
+       <div class="col-sm-1 ">
+           <a href="index.html" class="btn btn-default">Inicio</a><br>
+           <a href="insercion.html" class="btn btn-default">Insertar</a><br>
+           <a href="#" class="btn btn-default">Leer</a><br>
+           <a href="" class="btn btn-default">Actualizar</a><br>
+           <a href="" class="btn btn-default">Eliminar</a>
+       </div>
+                
+             
+          
+         <div class="col-sm-6 ">
+              <h6 class="margen20"></h6>
+         <p class="margen20"> 
+        
+     <br>
+
+  
+ 
+         </p>
+          </div>
+
+
+  
+      <div class="col-sm-12 pie ">
+        <footer>
+            <p>Dise&ntildeado por Jes&uacutes Bola&ntildeo</p>
+            <p>Contactenos en laredsyscom@gmail.com</p>
+            <p>Hecho con Bootstrap 2017</p>
+            <p>Todos los Derechos reservados</p>
+        </footer>
+      </div>
+<script src = "js/jquery-3.2.1.min.js"></script>
+<script src = "js/bootstrap.min.js"></script>
+
+</body>
+</html>
