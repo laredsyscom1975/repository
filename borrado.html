@@ -17,15 +17,7 @@
     
    <div class="row col-sx-12 col-sm-push-12 col-md-push-12 col-lg-push-12 ">      <!-- bloque para titulares-->
   		<h3 class="centrado" >Diseño web 1</h3>	 
-                <div class="fb-comments" data-href="http://localhost/mi%20primera%20pagina/#" data-numposts="5"></div>
-       <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = 'https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.10';
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+                
         
    
    
@@ -36,6 +28,13 @@
        </div>
                   <div class="col-sm-5  ">
                   <H6> Borrado de registros en mysql con php</h6>
+                  Aprendemos a eliminar registros de una tabla de base de datos, con un ejemplo práctico en PHP.
+Otra de las operaciones elementales que se pueden realizar sobre una base de datos es borrar un registro.
+Para hacerlo, SQL nos propone sentencias del tipo Delete. Veámoslo con un ejemplo aplicado a nuestra agenda.
+Cabe señalar que primero debemos seleccionar el registro que se desea borrar y luego realizar el borrado propiamente dicho.
+Para ello crearemos un menú desplegable dinámico, donde se podrá seleccionar el elemento que se desea borrar. 
+Luego se pasará a una página PHP una referencia al elemento seleccionado, para borrarlo de la base de datos.<br>
+
                   <p >
             
                   </p>
@@ -51,17 +50,68 @@
              
           
          <div class="col-sm-6 ">
-              <h6 class="margen20">INSERTAR REGISTROS</h6>
+              <h6 class="margen20"></h6>
          <p class="margen20"> 
-        
-        
- 
- Ampliación del código de registro de datos:
-El código presentado, si bien es correcto, tiene un gran problema, y es que no protege la entrada de datos, por lo que cualquier usuario malintencionado puede tratar de sabotear el funcionamiento de nuestra Web, lo que no es deseable.
-Aunque la base de datos que usamos para las demostraciones es independiente de la que gestiona el funcionamiento de esta Web, se ha decidido agregar algunas medidas elementales de protección de los registros dados los ataques sufridos, que por otro lado, a tratarse de una base de datos independiente, no han afectado en medida alguna al funcionamiento de esta Web.
-Se han tomado dos medidas de protección muy elementales, una de ellas obliga a los usuarios a cumplimentar los dos campos, para ello contamos los caracteres introducidos en cada campo, nombre y email, si el  producto de esos valores es 0, es porque algunos de los valores es cero. La variable $total_car, es la que contabiliza este producto.
-La otra protección afecta a la base de datos propiamente dicha, ya que impide guardar etiquetas de código, como iframes, habiendo sido estas los ultimas detectadas. Esto lo hacemos con la función de PHP strip_tags(), que por su sencillez de uso, puede ser fácilmente implementada en nuestros códigos. 
-El código es el siguiente:<br>
+                
+    <pre class="pre-scrollable">
+ <code class="minimi"> 
+&lt;HTML&gt;
+&lt;HEAD&gt;
+&lt;TITLE&gt;Borrar1.php&lt;/TITLE&gt;
+&lt;/HEAD&gt;
+&lt;BODY&gt;
+&lt;div align="center"&gt;
+&lt;h1&gt;Borrar un registro&lt;/h1&gt;
+&lt;br&gt;
+
+&lt;?
+//Conexion con la base
+mysql_connect("localhost","tu_user","tu_password");
+//selección de la base de datos con la que vamos a trabajar 
+mysql_select_db("mi_base_datos"); 
+echo '&lt;FORM METHOD="POST" ACTION="borrar2.php"&gt;Nombre&lt;br&gt;';
+//Creamos la sentencia SQL y la ejecutamos
+$sSQL="Select nombre From clientes Order By nombre";
+$result=mysql_query($sSQL);
+echo '&lt;select name="nombre"&gt;';
+//Mostramos los registros en forma de menú desplegable
+while ($row=mysql_fetch_array($result))
+{echo '&lt;option&gt;'.$row["nombre"];}
+mysql_free_result($result)
+?&gt;
+&lt;/select&gt;
+&lt;br&gt;
+&lt;INPUT TYPE="SUBMIT" value="Borrar"&gt;
+&lt;/FORM&gt;
+&lt;/div&gt;
+&lt;/BODY&gt;
+&lt;/HTML&gt;
+El siguiente paso es hacer efectiva la operación a partir de la ejecución de la sentencia SQL que construimos a partir de los datos del formulario:
+&lt;HTML&gt;
+&lt;HEAD&gt;
+&lt;TITLE&gt;Borrar2.php&lt;/TITLE&gt;
+&lt;/HEAD&gt;
+&lt;BODY&gt;
+&lt;?
+//Conexion con la base
+mysql_connect("localhost","tu_user","tu_password");
+
+//selección de la base de datos con la que vamos a trabajar 
+mysql_select_db("mi_base_datos");
+
+//Creamos la sentencia SQL y la ejecutamos
+$sSQL="Delete From Clientes Where nombre='$nombre'";
+mysql_query($sSQL);
+?&gt;
+&lt;h1&gt;&lt;div align="center"&gt;Registro Borrado&lt;/div&gt;&lt;/h1&gt;
+&lt;div align="center"&gt;&lt;a href="lectura.php"&gt;Visualizar el contenido de la base&lt;/a&gt;&lt;/div&gt;
+
+&lt;/BODY&gt;
+&lt;/HTML&gt;
+Tomado de http://www.uterra.com/base_datos_mysql/codigo_mysql.php?ref=guardar_datos_en_una_base_de_datos
+   </code>
+    </pre>
+          
 
   
  

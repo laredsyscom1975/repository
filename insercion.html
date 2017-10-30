@@ -74,6 +74,153 @@ Se han tomado dos medidas de protección muy elementales, una de ellas obliga a 
 La otra protección afecta a la base de datos propiamente dicha, ya que impide guardar etiquetas de código, como iframes, habiendo sido estas los ultimas detectadas. Esto lo hacemos con la función de PHP strip_tags(), que por su sencillez de uso, puede ser fácilmente implementada en nuestros códigos. 
 El código es el siguiente:<br>
 
+    <pre class="pre-scrollable">
+<code class="minimi ">
+     &lt;html&gt;    
+&lt;head&gt;    
+&lt;title&gt;Guardar datos en una base de datos&lt;/title&gt;    
+&lt;/head&gt;    
+&lt;body&gt;    
+&lt;form method="POST" action="registra.php"&gt;    
+
+    &lt;p&gt;Nombre: &lt;input type="text" name="nombre" size="20"&gt;&lt;/p&gt;    
+    &lt;p&gt;E-mail: &lt;input type="text" name="email" size="20"&gt;&lt;/p&gt;    
+       
+    &lt;p&gt;&lt;input type="submit" value="Guardar datos" name="B1"&gt;&lt;/p&gt;    
+      
+&lt;/form&gt;    
+&lt;/body&gt;    
+&lt;/html&gt;    
+========================================    
+========= registra.php    
+&lt;html&gt;    
+&lt;head&gt;    
+&lt;title&gt;Guardamos los datos en la base de datos&lt;/title&gt;    
+&lt;/head&gt;    
+&lt;body&gt;    
+&lt;?php    
+// Recibimos por POST los datos procedentes del formulario    
+$nombre = $_POST["nombre"];    
+$email = $_POST["email"];    
+$fecha = date("d-m-Y");    
+// Abrimos la conexion a la base de datos    
+include("abre_conexion.php");    
+$_GRABAR_SQL = "INSERT INTO $tabla_db1 (nombre,email,fecha) VALUES ('$nombre','$email','$fecha')";    
+mysql_query($_GRABAR_SQL);   
+// Cerramos la conexion a la base de datos    
+include("cierra_conexion.php");    
+// Confirmamos que el registro ha sido insertado con exito    
+echo "    
+&lt;p&gt;Los datos han sido guardados con exito.&lt;/p&gt;    
+
+&lt;p&gt;&lt;a href='javascript:history.go(-1)'&gt;VOLVER ATRÁS&lt;/a&gt;&lt;/p&gt;    
+";    
+?&gt;    
+&lt;/body&gt;    
+&lt;/html&gt;   
+========================================    
+========= registra.php  (2)  
+&lt;html&gt;  
+&lt;head&gt;  
+&lt;title&gt;Guardamos los datos en la base de datos&lt;/title&gt;  
+&lt;META name='robot' content='noindex, nofollow'&gt;  
+&lt;/head&gt;  
+&lt;body&gt;  
+&lt;?php  
+// Recibimos por POST los datos procedentes del formulario  
+$nombr = $_POST["nombre"];  
+$nombre = strip_tags($nombr);    // Eliminamos la etiquetas que puedan existir  
+$n_nombre = strlen($nombre);      // Contamos el numero de caracteres  
+$emai = $_POST["email"];  
+$email = strip_tags($emai);        // Eliminamos la etiquetas que puedan existir  
+$n_email = strlen($email);         // Contamos el numero de caracteres  
+$fecha = date("d-m-Y H:i");  
+$total_car = $n_nombre * $n_email;    // Si alguno de ellos vale 0, $total_car valdrá 0  
+if ($total_car &gt;= 1)   
+{   
+    // Abrimos la conexion a la base de datos  
+    include("abre_conexion.php");  
+     
+    $_GRABAR_SQL = "INSERT INTO $tabla (nombre,email,fecha) VALUES ('$nombre','$email','$fecha')";   
+    mysql_query($_GRABAR_SQL);  
+          // Cerramos la conexion a la base de datos  
+    include("cierra_conexion.php");  
+          // Confirmamos que el registro ha sido insertado con exito  
+          echo "  
+    &lt;p&gt;Los datos han sido guardados con exito.&lt;/p&gt;  
+          &lt;p&gt;&lt;a href='javascript:history.go(-1)'&gt;VOLVER ATRÁS&lt;/a&gt;&lt;/p&gt;  
+          &lt;p&gt;&lt;a href='http://www.uterra.com/archcodfuente/demos/id103/lista2.php' title='Clic aquí'&gt;Ver los registros   
+     
+    guardados&lt;/a&gt;&lt;/p&gt;  
+    ";  
+}  
+else  
+{  
+    echo "  
+    Los campos &lt;b&gt;nombre&lt;/b&gt; y &lt;b&gt;email&lt;/b&gt; no pueden estar vacios.&lt;br /&gt;  
+    &lt;a href=\"javascript:history.go(-1)\"&gt;Volver&lt;/a&gt;  
+    ";  
+}  
+?&gt;  
+&lt;/body&gt;  
+&lt;/html&gt;  
+========================================    
+========= registra.php  (3)  
+&lt;html&gt; 
+&lt;head&gt; 
+&lt;title&gt;Guardamos los datos en la base de datos&lt;/title&gt; 
+&lt;META name='robot' content='noindex, nofollow'&gt; 
+&lt;/head&gt; 
+&lt;body&gt; 
+&lt;?php 
+// Recibimos por POST los datos procedentes del formulario 
+$nombr = $_POST["nombre"];            // Asi recogemos el nombre desde el formulario 
+    $nombre = strip_tags($nombr);    // Eliminamos la etiquetas que puedan existir 
+    $n_nombre = strlen($nombre);      // Contamos el numero de caracteres 
+$emai = $_POST["email"];            // Asi recogemos el email desde el formulario 
+    $email = strip_tags($emai);        // Eliminamos la etiquetas que puedan existir 
+             // Validamos el email de manera muy simple, contempla que exista la @, el . y no exista espacios en blanco 
+        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {  
+            // Email valido, contamos los caracteres 
+            $n_email = strlen($email);         // Contamos el numero de caracteres 
+        } else {  
+            // Email no valido, asignamos 0 al numero de caracteres 
+            $n_email = 0; 
+        }  
+$fecha = date("d-m-Y");        // Asi recogemos la fecha 
+$hora = date("H:i");        // Asi recogemos la hora 
+$total_car = $n_nombre * $n_email;    // Si alguno de ellos vale 0, $total_car valdrá 0 
+if ($total_car &gt;= 1) {  
+    // Abrimos la conexion a la base de datos 
+    include("../abre_conexion.php"); 
+         $_GRABAR_SQL = "INSERT INTO $tabla_db1 (nombre,email,fecha, hora) VALUES ('$nombre', '$email', '$fecha', '$hora')";  
+    mysql_query($_GRABAR_SQL); 
+         // Cerramos la conexion a la base de datos 
+    include("../cierra_conexion.php"); 
+         // Confirmamos que el registro ha sido insertado con exito 
+         echo " 
+    &lt;p&gt;Los datos han sido guardados con exito.&lt;/p&gt; 
+         &lt;p&gt;&lt;a href='javascript:history.go(-1)'&gt;VOLVER ATRÁS&lt;/a&gt;&lt;/p&gt; 
+   
+    &lt;p&gt;&lt;a href='http://www.uterra.com/archcodfuente/demos/id103/lista2.php' title='Clic aquí'&gt;Ver los resgistros  
+    
+    guardados&lt;/a&gt;&lt;/p&gt; 
+    "; 
+   
+} else { 
+         echo " 
+    Los campos &lt;b&gt;nombre&lt;/b&gt; y &lt;b&gt;email&lt;/b&gt; no pueden estar vacios.&lt;br /&gt; 
+    &lt;a href=\"javascript:history.go(-1)\"&gt;Volver&lt;/a&gt; 
+    "; 
+} 
+?&gt; 
+&lt;/body&gt; 
+&lt;/html&gt;
+
+</code>
+
+    </pre>
+
   
  
          </p>
