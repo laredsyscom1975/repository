@@ -1,8 +1,9 @@
 .fondotierra{background-color:#DBA901;}
 .fondoverde{background-color:#01DF01;}
-.fondoazul{background-color:#005b90;color :#ffffff;}
+.fondoazul{background-color:#005883;color :#ffffff;}
 .centrado{text-align:center;}
 .letrablanca{color:#ffffff;}
-.pie{font-size:80%;background-color:#cccccc;}
+.pie{font-size:90%;background-color:#808080;}
 .margen20{padding-left:20px;}
 .forzada{overflow:auto;}
+.tamano_cuerpo{min-height:100%;}
