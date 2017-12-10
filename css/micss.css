@@ -1,3 +1,6 @@
+h1,h2,h3,h4,h5,h6 {
+    font-weight: normal;
+    font-size: 100%;}
 .fondotierra{background-color:#DBA901;}
 .fondoverde{background-color:#01DF01;}
 .fondoazul{background-color:#005883;color :#ffffff;}
@@ -7,3 +10,5 @@
 .margen20{padding-left:20px;}
 .minimi{font-size:70%;max-height: 200px;}
 .tamfuente{font-size: 40%;}
+h1{font-size:150%;}
+.row{margin-top: 30px;}
