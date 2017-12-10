@@ -13,19 +13,19 @@
             <img src ="images/banner-unad.png" class="img-fluid img-responsive" >
         </div>
         </header>
-    
-    
+
+
    <div class="row col-sx-12 col-sm-push-12 col-md-push-12 col-lg-push-12 ">      <!-- bloque para titulares-->
-  		<h1 class="centrado" >Diseño web 1</h1>	  			
+  		<h1 class="centrado" >Diseño web 1</h1>
    </div>
-       
-        
-   
-   
-    
+
+
+
+
+
        <!-- este es el body de la pagina -->
        <div class="col-sm-12 ">
-          
+
        </div>
                   <div class="col-sm-5  ">
                   <H6>Actualización de registros en mysql con php</h6>
@@ -40,7 +40,7 @@ Por tanto, para iniciar la actualización vamos a crear un formulario en el que 
 Por tanto, ahora tendremos que crear tres páginas, de ellas quizás pueda pasar desapercibido que en el form2.php la variable “id” se envía a través de un campo oculto (hidden) para ejecutar la actualización en la página de actualización.
 
                   <p >
-                
+
                   </p>
                   </div>
        <div class="col-sm-1 ">
@@ -51,157 +51,157 @@ Por tanto, ahora tendremos que crear tres páginas, de ellas quizás pueda pasar
            <a href="borrado.html" class="btn btn-default">Eliminar</a>
            <a href="creditos.html" class="btn btn-default">Creditos...</a>
        </div>
-                
-             
-          
+
+
+
          <div class="col-sm-6 ">
-            
-         <p class="margen20"> 
+
+         <p class="margen20">
              <pre class="pre-scrollable">
              <code class="minimi">
-                 
-&lt;html&gt; 
 
-&lt;head&gt; 
-&lt;title&gt;Iniciar actualización.&lt;/title&gt; 
-&lt;META name='robot' content='noindex, nofollow'&gt; 
-&lt;/head&gt; 
+&lt;html&gt;
 
-&lt;body&gt; 
+&lt;head&gt;
+&lt;title&gt;Iniciar actualización.&lt;/title&gt;
+&lt;META name='robot' content='noindex, nofollow'&gt;
+&lt;/head&gt;
 
-&lt;div align="center"&gt; 
-    &lt;table border="0" width="600" style="font-family: Verdana; font-size: 8pt" id="table1"&gt; 
-        &lt;tr&gt; 
-            &lt;td colspan="2"&gt;&lt;h3 align="center"&gt;Actualización de datos&lt;/h3&gt;&lt;/td&gt; 
-        &lt;/tr&gt; 
-        &lt;form method="POST" action="form2.php"&gt; 
-        &lt;tr&gt; 
-            &lt;td width="50%"&gt;&nbsp;&lt;/td&gt; 
-            &lt;td width="50%"&gt;&nbsp;&lt;/td&gt; 
-        &lt;/tr&gt; 
-        &lt;tr&gt; 
-            &lt;td width="50%"&gt; 
-            &lt;p align="center"&gt;&lt;b&gt;ID del registro a actualizar: &lt;/b&gt;&lt;/td&gt; 
-            &lt;td width="50%"&gt; 
-            &lt;p align="center"&gt;&lt;input type="text" name="id" size="20"&gt;&lt;/td&gt; 
-        &lt;/tr&gt; 
-        &lt;tr&gt; 
-            &lt;td width="50%"&gt;&nbsp;&lt;/td&gt; 
-            &lt;td width="50%"&gt;&nbsp;&lt;/td&gt; 
-        &lt;/tr&gt; 
-        &lt;tr&gt; 
-            &lt;td width="100%" colspan="2"&gt; 
-            &lt;p align="center"&gt; 
-            &lt;input type="submit" value="Iniciar actualización" name="B1"&gt;&lt;/td&gt; 
-        &lt;/tr&gt; 
-        &lt;/form&gt; 
-    &lt;/table&gt; 
-&lt;/div&gt; 
+&lt;body&gt;
 
-&lt;/body&gt; 
+&lt;div align="center"&gt;
+    &lt;table border="0" width="600" style="font-family: Verdana; font-size: 8pt" id="table1"&gt;
+        &lt;tr&gt;
+            &lt;td colspan="2"&gt;&lt;h3 align="center"&gt;Actualización de datos&lt;/h3&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;form method="POST" action="form2.php"&gt;
+        &lt;tr&gt;
+            &lt;td width="50%"&gt;&nbsp;&lt;/td&gt;
+            &lt;td width="50%"&gt;&nbsp;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td width="50%"&gt;
+            &lt;p align="center"&gt;&lt;b&gt;ID del registro a actualizar: &lt;/b&gt;&lt;/td&gt;
+            &lt;td width="50%"&gt;
+            &lt;p align="center"&gt;&lt;input type="text" name="id" size="20"&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td width="50%"&gt;&nbsp;&lt;/td&gt;
+            &lt;td width="50%"&gt;&nbsp;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td width="100%" colspan="2"&gt;
+            &lt;p align="center"&gt;
+            &lt;input type="submit" value="Iniciar actualización" name="B1"&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/form&gt;
+    &lt;/table&gt;
+&lt;/div&gt;
 
-&lt;/html&gt; 
+&lt;/body&gt;
 
-======== form2.php 
-&lt;html&gt; 
+&lt;/html&gt;
 
-&lt;head&gt; 
-&lt;title&gt;Datos a actualizar.&lt;/title&gt; 
-&lt;META name='robot' content='noindex, nofollow'&gt; 
-&lt;/head&gt; 
+======== form2.php
+&lt;html&gt;
 
-&lt;?php  
-$id = $_POST['id']; 
+&lt;head&gt;
+&lt;title&gt;Datos a actualizar.&lt;/title&gt;
+&lt;META name='robot' content='noindex, nofollow'&gt;
+&lt;/head&gt;
 
-include('abre_conexion.php');   
+&lt;?php
+$id = $_POST['id'];
 
-    $query = "select * from $tabla_db1 where id = '$id'"; 
-    $result = mysql_query($query); 
+include('abre_conexion.php');
 
-while ($registro = mysql_fetch_array($result)){ 
+    $query = "select * from $tabla_db1 where id = '$id'";
+    $result = mysql_query($query);
 
-echo " 
-&lt;body&gt; 
+while ($registro = mysql_fetch_array($result)){
 
-&lt;div align='center'&gt; 
-    &lt;table border='0' width='600' style='font-family: Verdana; font-size: 8pt' id='table1'&gt; 
-        &lt;tr&gt; 
-            &lt;td colspan='2'&gt;&lt;h3 align='center'&gt;Actualice los datos que considere&lt;/h3&gt;&lt;/td&gt; 
-        &lt;/tr&gt; 
-        &lt;tr&gt; 
-            &lt;td colspan='2'&gt;En los campos del formulario puede ver los valores actuales,  
-            si no se cambian los valores se mantienen iguales.&lt;/td&gt; 
-        &lt;/tr&gt; 
-        &lt;form method='POST' action='actualiza.php'&gt; 
-        &lt;tr&gt; 
-            &lt;td width='50%'&gt;&nbsp;&lt;/td&gt; 
-            &lt;td width='50%'&gt;&nbsp;&lt;/td&gt; 
-        &lt;/tr&gt; 
-        &lt;tr&gt; 
-            &lt;td width='50%'&gt;&lt;p align='center'&gt;&lt;b&gt;Nombre: &lt;/b&gt;&lt;/td&gt; 
-            &lt;td width='50%'&gt;&lt;p align='center'&gt;&lt;input type='text' name='nombre' size='20' value='".$registro['nombre']."'&gt;&lt;/td&gt; 
-        &lt;/tr&gt; 
-        &lt;tr&gt; 
-            &lt;td width='50%'&gt;&lt;p align='center'&gt;&lt;b&gt;E-mail:&lt;/b&gt;&lt;/td&gt; 
-            &lt;td width='50%'&gt;&lt;p align='center'&gt;&lt;input type='text' name='email' size='20' value='".$registro['email']."'&gt;&lt;/td&gt; 
-        &lt;/tr&gt; 
-        &lt;tr&gt; 
-            &lt;td width='50%'&gt;&nbsp;&lt;/td&gt; 
-            &lt;td width='50%'&gt;&nbsp;&lt;/td&gt; 
-        &lt;/tr&gt; 
-        &lt;input type='hidden' name='id' value='$id'&gt; 
-        &lt;tr&gt; 
-            &lt;td width='100%' colspan='2'&gt; 
-            &lt;p align='center'&gt; 
-            &lt;input type='submit' value='Actualizar datos' name='B1'&gt;&lt;/td&gt; 
-        &lt;/tr&gt; 
-        &lt;/form&gt; 
-    &lt;/table&gt; 
-&lt;/div&gt; 
-"; 
-} 
-include('cierra_conexion.php');   
-?&gt; 
-&lt;/body&gt; 
+echo "
+&lt;body&gt;
 
-&lt;/html&gt; 
+&lt;div align='center'&gt;
+    &lt;table border='0' width='600' style='font-family: Verdana; font-size: 8pt' id='table1'&gt;
+        &lt;tr&gt;
+            &lt;td colspan='2'&gt;&lt;h3 align='center'&gt;Actualice los datos que considere&lt;/h3&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td colspan='2'&gt;En los campos del formulario puede ver los valores actuales,
+            si no se cambian los valores se mantienen iguales.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;form method='POST' action='actualiza.php'&gt;
+        &lt;tr&gt;
+            &lt;td width='50%'&gt;&nbsp;&lt;/td&gt;
+            &lt;td width='50%'&gt;&nbsp;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td width='50%'&gt;&lt;p align='center'&gt;&lt;b&gt;Nombre: &lt;/b&gt;&lt;/td&gt;
+            &lt;td width='50%'&gt;&lt;p align='center'&gt;&lt;input type='text' name='nombre' size='20' value='".$registro['nombre']."'&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td width='50%'&gt;&lt;p align='center'&gt;&lt;b&gt;E-mail:&lt;/b&gt;&lt;/td&gt;
+            &lt;td width='50%'&gt;&lt;p align='center'&gt;&lt;input type='text' name='email' size='20' value='".$registro['email']."'&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td width='50%'&gt;&nbsp;&lt;/td&gt;
+            &lt;td width='50%'&gt;&nbsp;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;input type='hidden' name='id' value='$id'&gt;
+        &lt;tr&gt;
+            &lt;td width='100%' colspan='2'&gt;
+            &lt;p align='center'&gt;
+            &lt;input type='submit' value='Actualizar datos' name='B1'&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/form&gt;
+    &lt;/table&gt;
+&lt;/div&gt;
+";
+}
+include('cierra_conexion.php');
+?&gt;
+&lt;/body&gt;
 
-======== actualiza.php 
-&lt;html&gt; 
+&lt;/html&gt;
 
-&lt;head&gt; 
-&lt;title&gt;Actualizacion completada.&lt;/title&gt; 
-&lt;META name='robot' content='noindex, nofollow'&gt; 
-&lt;/head&gt; 
+======== actualiza.php
+&lt;html&gt;
 
-&lt;body&gt; 
+&lt;head&gt;
+&lt;title&gt;Actualizacion completada.&lt;/title&gt;
+&lt;META name='robot' content='noindex, nofollow'&gt;
+&lt;/head&gt;
 
-&lt;?php 
-// Actualizamos en funcion del id que recibimos 
+&lt;body&gt;
 
-$id = $_POST['id']; 
+&lt;?php
+// Actualizamos en funcion del id que recibimos
 
-$nombre = $_POST['nombre']; 
-$email = $_POST['email']; 
-$fecha = date("d-m-Y"); 
+$id = $_POST['id'];
 
-include('abre_conexion.php');   
+$nombre = $_POST['nombre'];
+$email = $_POST['email'];
+$fecha = date("d-m-Y");
 
-$sSQL="Update $tabla_db1 Set nombre='$nombre',email='$email',fecha='$fecha' where id='$id'"; 
-mysql_query($sSQL); 
+include('abre_conexion.php');
 
-include('cierra_conexion.php');   
+$sSQL="Update $tabla_db1 Set nombre='$nombre',email='$email',fecha='$fecha' where id='$id'";
+mysql_query($sSQL);
 
-echo " 
-&lt;p&gt;Los datos han sido actualizados con exito.&lt;/p&gt; 
+include('cierra_conexion.php');
 
-&lt;p&gt;&lt;a href='javascript:history.go(-1)'&gt;VOLVER ATRÁS&lt;/a&gt;&lt;/p&gt; 
+echo "
+&lt;p&gt;Los datos han sido actualizados con exito.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href='javascript:history.go(-2)'&gt;INICIO&lt;/a&gt;&lt;/p&gt; 
-"; 
-?&gt; 
+&lt;p&gt;&lt;a href='javascript:history.go(-1)'&gt;VOLVER ATRÁS&lt;/a&gt;&lt;/p&gt;
 
-&lt;/body&gt; 
+&lt;p&gt;&lt;a href='javascript:history.go(-2)'&gt;INICIO&lt;/a&gt;&lt;/p&gt;
+";
+?&gt;
+
+&lt;/body&gt;
 
 &lt;/html&gt;
 
@@ -209,20 +209,20 @@ echo "
  </code>
 
                  </pre>
-            
-        
 
-  
- 
+
+
+
+
          </p>
           </div>
 
 
-  
+
       <div class="col-sm-12 pie ">
-          
+
         <footer>
-           <p>Dise&ntildeado; por Jes&uacutes; Bola&ntildeo;.<br>
+           <p>Dise&ntildeado por Jes&uacutes Bola&ntildeo.<br>
                 Contactenos en laredsyscom@gmail.com<br>
                 Hecho con Bootstrap 2017<br>
             Todos los Derechos reservados</p>

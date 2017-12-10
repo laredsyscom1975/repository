@@ -13,18 +13,18 @@
             <img src ="images/banner-unad.png" class="img-fluid img-responsive" >
         </div>
         </header>
-    
-    
+
+
    <div class="row col-sx-12 col-sm-push-12 col-md-push-12 col-lg-push-12 ">      <!-- bloque para titulares-->
-  		<h1 class="centrado" >Diseño web 1</h1>	 
-                
-        
-   
-   
-    
+  		<h1 class="centrado" >Diseño web 1</h1>
+
+
+
+
+
        <!-- este es el body de la pagina -->
        <div class="col-sm-12 ">
-          
+
        </div>
                   <div class="col-sm-5  ">
                   <H6> Borrado de registros en mysql con php</h6>
@@ -32,11 +32,11 @@
 Otra de las operaciones elementales que se pueden realizar sobre una base de datos es borrar un registro.
 Para hacerlo, SQL nos propone sentencias del tipo Delete. Veámoslo con un ejemplo aplicado a nuestra agenda.
 Cabe señalar que primero debemos seleccionar el registro que se desea borrar y luego realizar el borrado propiamente dicho.
-Para ello crearemos un menú desplegable dinámico, donde se podrá seleccionar el elemento que se desea borrar. 
+Para ello crearemos un menú desplegable dinámico, donde se podrá seleccionar el elemento que se desea borrar.
 Luego se pasará a una página PHP una referencia al elemento seleccionado, para borrarlo de la base de datos.<br>
 
                   <p >
-            
+
                   </p>
                   </div>
        <div class="col-sm-1 ">
@@ -47,15 +47,15 @@ Luego se pasará a una página PHP una referencia al elemento seleccionado, para
            <a href="#" class="btn btn-default">Eliminar</a>
            <a href="creditos.html" class="btn btn-default">Creditos...</a>
        </div>
-                
-             
-          
+
+
+
          <div class="col-sm-6 ">
               <h6 class="margen20"></h6>
-         <p class="margen20"> 
-                
+         <p class="margen20">
+
     <pre class="pre-scrollable">
- <code class="minimi"> 
+ <code class="minimi">
 &lt;HTML&gt;
 &lt;HEAD&gt;
 &lt;TITLE&gt;Borrar1.php&lt;/TITLE&gt;
@@ -68,8 +68,8 @@ Luego se pasará a una página PHP una referencia al elemento seleccionado, para
 &lt;?
 //Conexion con la base
 mysql_connect("localhost","tu_user","tu_password");
-//selección de la base de datos con la que vamos a trabajar 
-mysql_select_db("mi_base_datos"); 
+//selección de la base de datos con la que vamos a trabajar
+mysql_select_db("mi_base_datos");
 echo '&lt;FORM METHOD="POST" ACTION="borrar2.php"&gt;Nombre&lt;br&gt;';
 //Creamos la sentencia SQL y la ejecutamos
 $sSQL="Select nombre From clientes Order By nombre";
@@ -97,7 +97,7 @@ El siguiente paso es hacer efectiva la operación a partir de la ejecución de l
 //Conexion con la base
 mysql_connect("localhost","tu_user","tu_password");
 
-//selección de la base de datos con la que vamos a trabajar 
+//selección de la base de datos con la que vamos a trabajar
 mysql_select_db("mi_base_datos");
 
 //Creamos la sentencia SQL y la ejecutamos
@@ -112,18 +112,18 @@ mysql_query($sSQL);
 Tomado de http://www.uterra.com/base_datos_mysql/codigo_mysql.php?ref=guardar_datos_en_una_base_de_datos
    </code>
     </pre>
-          
 
-  
- 
+
+
+
          </p>
           </div>
 
 
-  
+
       <div class="col-sm-12 pie ">
         <footer>
-           <p>Dise&ntildeado; por Jes&uacutes; Bola&ntildeo;.<br>
+           <p>Dise&ntildeado por Jes&uacutes Bola&ntildeo.<br>
                 Contactenos en laredsyscom@gmail.com<br>
                 Hecho con Bootstrap 2017<br>
             Todos los Derechos reservados</p>
