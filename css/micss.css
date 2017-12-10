@@ -1,11 +1,12 @@
 h1,h2,h3,h4,h5,h6 {
     font-weight: normal;
     font-size: 100%;}
-.fondotierra{background-color:#DBA901;}
+
 .fondoverde{background-color:#01DF01;}
 .fondoazul{background-color:#005883;color :#ffffff;}
 .centrado{text-align:center;}
 .letrablanca{color:#ffffff;}
+.letrablanca a:hover{text-decoration: none;}
 .pie{font-size:90%;background-color:#808080;}
 .margen20{padding-left:20px;}
 .minimi{font-size:70%;max-height: 200px;}

@@ -13,24 +13,24 @@
             <img src ="images/banner-unad.png" class="img-fluid img-responsive" >
         </div>
         </header>
-    
-    
+
+
    <div class="row col-sx-12 col-sm-push-12 col-md-push-12 col-lg-push-12 ">      <!-- bloque para titulares-->
-  		<h1 class="centrado" >Diseño web 1</h1>	  			
+  		<h1 class="centrado" >Diseño web 1</h1>
    </div>
-       
-        
-   
-   
-    
+
+
+
+
+
        <!-- este es el body de la pagina -->
        <div class="col-sm-12 ">
-          
+
        </div>
                   <div class="col-sm-5  ">
                   <H6> HACER UN CRUD BASICO EN PHP</h6>
                   <p >
-                      
+
 
 Primero vamos a ver un pequeño tutorial de cómo hacer las operaciones en mysql sin php, para posteriormente empezar a codificar las operaciones en php.<br>
 <a href="https://youtu.be/QNSQwzQ5_Qk?t=7" target="blank" class="letrablanca btn btn-link">https://youtu.be/QNSQwzQ5_Qk?t=7</a><br>
@@ -50,7 +50,7 @@ La página que registra los datos - registra.php - contiene en primer lugar la r
 La variable - $_GRABAR_SQL - contiene la consulta que propiamente guarda los registros en la base de datos. Mediante – insert into – y la variable que contiene el nombre de la tabla especificamos el nombre de los campos donde guardaremos los datos. Tras ese paréntesis, nombramos las variables que contienen los valores que guardaremos en los mencionados campos.
 Por último, mostramos un mensaje que indica que los datos se han guardado correctamente.
                   </p>
-                  <a href="apoyo.html"  class="letrablanca btn btn-link">Ver videos de apoyo</a><br>
+                  <a href="apoyo.html"  class="letrablanca btn btn-default btn-xs btn lg active">Ver videos de apoyo</a><br>
                   </div>
        <div class="col-sm-1 ">
            <a href="index.html" class="btn btn-default">Inicio</a><br>
@@ -60,179 +60,179 @@ Por último, mostramos un mensaje que indica que los datos se han guardado corre
            <a href="borrado.html" class="btn btn-default">Eliminar</a>
             <a href="creditos.html" class="btn btn-default">Creditos...</a>
        </div>
-                
-             
-          
+
+
+
          <div class="col-sm-6 ">
               <h6 class="margen20">INSERTAR REGISTROS</h6>
-         <p class="margen20"> 
-        
-        
- 
+         <p class="margen20">
+
+
+
  Ampliación del código de registro de datos:
 El código presentado, si bien es correcto, tiene un gran problema, y es que no protege la entrada de datos, por lo que cualquier usuario malintencionado puede tratar de sabotear el funcionamiento de nuestra Web, lo que no es deseable.
 Aunque la base de datos que usamos para las demostraciones es independiente de la que gestiona el funcionamiento de esta Web, se ha decidido agregar algunas medidas elementales de protección de los registros dados los ataques sufridos, que por otro lado, a tratarse de una base de datos independiente, no han afectado en medida alguna al funcionamiento de esta Web.
 Se han tomado dos medidas de protección muy elementales, una de ellas obliga a los usuarios a cumplimentar los dos campos, para ello contamos los caracteres introducidos en cada campo, nombre y email, si el  producto de esos valores es 0, es porque algunos de los valores es cero. La variable $total_car, es la que contabiliza este producto.
-La otra protección afecta a la base de datos propiamente dicha, ya que impide guardar etiquetas de código, como iframes, habiendo sido estas los ultimas detectadas. Esto lo hacemos con la función de PHP strip_tags(), que por su sencillez de uso, puede ser fácilmente implementada en nuestros códigos. 
+La otra protección afecta a la base de datos propiamente dicha, ya que impide guardar etiquetas de código, como iframes, habiendo sido estas los ultimas detectadas. Esto lo hacemos con la función de PHP strip_tags(), que por su sencillez de uso, puede ser fácilmente implementada en nuestros códigos.
 El código es el siguiente:<br>
 
     <pre class="pre-scrollable">
 <code class="minimi ">
-     &lt;html&gt;    
-&lt;head&gt;    
-&lt;title&gt;Guardar datos en una base de datos&lt;/title&gt;    
-&lt;/head&gt;    
-&lt;body&gt;    
-&lt;form method="POST" action="registra.php"&gt;    
+     &lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Guardar datos en una base de datos&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;form method="POST" action="registra.php"&gt;
 
-    &lt;p&gt;Nombre: &lt;input type="text" name="nombre" size="20"&gt;&lt;/p&gt;    
-    &lt;p&gt;E-mail: &lt;input type="text" name="email" size="20"&gt;&lt;/p&gt;    
-       
-    &lt;p&gt;&lt;input type="submit" value="Guardar datos" name="B1"&gt;&lt;/p&gt;    
-      
-&lt;/form&gt;    
-&lt;/body&gt;    
-&lt;/html&gt;    
-========================================    
-========= registra.php    
-&lt;html&gt;    
-&lt;head&gt;    
-&lt;title&gt;Guardamos los datos en la base de datos&lt;/title&gt;    
-&lt;/head&gt;    
-&lt;body&gt;    
-&lt;?php    
-// Recibimos por POST los datos procedentes del formulario    
-$nombre = $_POST["nombre"];    
-$email = $_POST["email"];    
-$fecha = date("d-m-Y");    
-// Abrimos la conexion a la base de datos    
-include("abre_conexion.php");    
-$_GRABAR_SQL = "INSERT INTO $tabla_db1 (nombre,email,fecha) VALUES ('$nombre','$email','$fecha')";    
-mysql_query($_GRABAR_SQL);   
-// Cerramos la conexion a la base de datos    
-include("cierra_conexion.php");    
-// Confirmamos que el registro ha sido insertado con exito    
-echo "    
-&lt;p&gt;Los datos han sido guardados con exito.&lt;/p&gt;    
+    &lt;p&gt;Nombre: &lt;input type="text" name="nombre" size="20"&gt;&lt;/p&gt;
+    &lt;p&gt;E-mail: &lt;input type="text" name="email" size="20"&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href='javascript:history.go(-1)'&gt;VOLVER ATRÁS&lt;/a&gt;&lt;/p&gt;    
-";    
-?&gt;    
-&lt;/body&gt;    
-&lt;/html&gt;   
-========================================    
-========= registra.php  (2)  
-&lt;html&gt;  
-&lt;head&gt;  
-&lt;title&gt;Guardamos los datos en la base de datos&lt;/title&gt;  
-&lt;META name='robot' content='noindex, nofollow'&gt;  
-&lt;/head&gt;  
-&lt;body&gt;  
-&lt;?php  
-// Recibimos por POST los datos procedentes del formulario  
-$nombr = $_POST["nombre"];  
-$nombre = strip_tags($nombr);    // Eliminamos la etiquetas que puedan existir  
-$n_nombre = strlen($nombre);      // Contamos el numero de caracteres  
-$emai = $_POST["email"];  
-$email = strip_tags($emai);        // Eliminamos la etiquetas que puedan existir  
-$n_email = strlen($email);         // Contamos el numero de caracteres  
-$fecha = date("d-m-Y H:i");  
-$total_car = $n_nombre * $n_email;    // Si alguno de ellos vale 0, $total_car valdrá 0  
-if ($total_car &gt;= 1)   
-{   
-    // Abrimos la conexion a la base de datos  
-    include("abre_conexion.php");  
-     
-    $_GRABAR_SQL = "INSERT INTO $tabla (nombre,email,fecha) VALUES ('$nombre','$email','$fecha')";   
-    mysql_query($_GRABAR_SQL);  
-          // Cerramos la conexion a la base de datos  
-    include("cierra_conexion.php");  
-          // Confirmamos que el registro ha sido insertado con exito  
-          echo "  
-    &lt;p&gt;Los datos han sido guardados con exito.&lt;/p&gt;  
-          &lt;p&gt;&lt;a href='javascript:history.go(-1)'&gt;VOLVER ATRÁS&lt;/a&gt;&lt;/p&gt;  
-          &lt;p&gt;&lt;a href='http://www.uterra.com/archcodfuente/demos/id103/lista2.php' title='Clic aquí'&gt;Ver los registros   
-     
-    guardados&lt;/a&gt;&lt;/p&gt;  
-    ";  
-}  
-else  
-{  
-    echo "  
-    Los campos &lt;b&gt;nombre&lt;/b&gt; y &lt;b&gt;email&lt;/b&gt; no pueden estar vacios.&lt;br /&gt;  
-    &lt;a href=\"javascript:history.go(-1)\"&gt;Volver&lt;/a&gt;  
-    ";  
-}  
-?&gt;  
-&lt;/body&gt;  
-&lt;/html&gt;  
-========================================    
-========= registra.php  (3)  
-&lt;html&gt; 
-&lt;head&gt; 
-&lt;title&gt;Guardamos los datos en la base de datos&lt;/title&gt; 
-&lt;META name='robot' content='noindex, nofollow'&gt; 
-&lt;/head&gt; 
-&lt;body&gt; 
-&lt;?php 
-// Recibimos por POST los datos procedentes del formulario 
-$nombr = $_POST["nombre"];            // Asi recogemos el nombre desde el formulario 
-    $nombre = strip_tags($nombr);    // Eliminamos la etiquetas que puedan existir 
-    $n_nombre = strlen($nombre);      // Contamos el numero de caracteres 
-$emai = $_POST["email"];            // Asi recogemos el email desde el formulario 
-    $email = strip_tags($emai);        // Eliminamos la etiquetas que puedan existir 
-             // Validamos el email de manera muy simple, contempla que exista la @, el . y no exista espacios en blanco 
-        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {  
-            // Email valido, contamos los caracteres 
-            $n_email = strlen($email);         // Contamos el numero de caracteres 
-        } else {  
-            // Email no valido, asignamos 0 al numero de caracteres 
-            $n_email = 0; 
-        }  
-$fecha = date("d-m-Y");        // Asi recogemos la fecha 
-$hora = date("H:i");        // Asi recogemos la hora 
-$total_car = $n_nombre * $n_email;    // Si alguno de ellos vale 0, $total_car valdrá 0 
-if ($total_car &gt;= 1) {  
-    // Abrimos la conexion a la base de datos 
-    include("../abre_conexion.php"); 
-         $_GRABAR_SQL = "INSERT INTO $tabla_db1 (nombre,email,fecha, hora) VALUES ('$nombre', '$email', '$fecha', '$hora')";  
-    mysql_query($_GRABAR_SQL); 
-         // Cerramos la conexion a la base de datos 
-    include("../cierra_conexion.php"); 
-         // Confirmamos que el registro ha sido insertado con exito 
-         echo " 
-    &lt;p&gt;Los datos han sido guardados con exito.&lt;/p&gt; 
-         &lt;p&gt;&lt;a href='javascript:history.go(-1)'&gt;VOLVER ATRÁS&lt;/a&gt;&lt;/p&gt; 
-   
-    &lt;p&gt;&lt;a href='http://www.uterra.com/archcodfuente/demos/id103/lista2.php' title='Clic aquí'&gt;Ver los resgistros  
-    
-    guardados&lt;/a&gt;&lt;/p&gt; 
-    "; 
-   
-} else { 
-         echo " 
-    Los campos &lt;b&gt;nombre&lt;/b&gt; y &lt;b&gt;email&lt;/b&gt; no pueden estar vacios.&lt;br /&gt; 
-    &lt;a href=\"javascript:history.go(-1)\"&gt;Volver&lt;/a&gt; 
-    "; 
-} 
-?&gt; 
-&lt;/body&gt; 
+    &lt;p&gt;&lt;input type="submit" value="Guardar datos" name="B1"&gt;&lt;/p&gt;
+
+&lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+========================================
+========= registra.php
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Guardamos los datos en la base de datos&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;?php
+// Recibimos por POST los datos procedentes del formulario
+$nombre = $_POST["nombre"];
+$email = $_POST["email"];
+$fecha = date("d-m-Y");
+// Abrimos la conexion a la base de datos
+include("abre_conexion.php");
+$_GRABAR_SQL = "INSERT INTO $tabla_db1 (nombre,email,fecha) VALUES ('$nombre','$email','$fecha')";
+mysql_query($_GRABAR_SQL);
+// Cerramos la conexion a la base de datos
+include("cierra_conexion.php");
+// Confirmamos que el registro ha sido insertado con exito
+echo "
+&lt;p&gt;Los datos han sido guardados con exito.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href='javascript:history.go(-1)'&gt;VOLVER ATRÁS&lt;/a&gt;&lt;/p&gt;
+";
+?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+========================================
+========= registra.php  (2)
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Guardamos los datos en la base de datos&lt;/title&gt;
+&lt;META name='robot' content='noindex, nofollow'&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;?php
+// Recibimos por POST los datos procedentes del formulario
+$nombr = $_POST["nombre"];
+$nombre = strip_tags($nombr);    // Eliminamos la etiquetas que puedan existir
+$n_nombre = strlen($nombre);      // Contamos el numero de caracteres
+$emai = $_POST["email"];
+$email = strip_tags($emai);        // Eliminamos la etiquetas que puedan existir
+$n_email = strlen($email);         // Contamos el numero de caracteres
+$fecha = date("d-m-Y H:i");
+$total_car = $n_nombre * $n_email;    // Si alguno de ellos vale 0, $total_car valdrá 0
+if ($total_car &gt;= 1)
+{
+    // Abrimos la conexion a la base de datos
+    include("abre_conexion.php");
+
+    $_GRABAR_SQL = "INSERT INTO $tabla (nombre,email,fecha) VALUES ('$nombre','$email','$fecha')";
+    mysql_query($_GRABAR_SQL);
+          // Cerramos la conexion a la base de datos
+    include("cierra_conexion.php");
+          // Confirmamos que el registro ha sido insertado con exito
+          echo "
+    &lt;p&gt;Los datos han sido guardados con exito.&lt;/p&gt;
+          &lt;p&gt;&lt;a href='javascript:history.go(-1)'&gt;VOLVER ATRÁS&lt;/a&gt;&lt;/p&gt;
+          &lt;p&gt;&lt;a href='http://www.uterra.com/archcodfuente/demos/id103/lista2.php' title='Clic aquí'&gt;Ver los registros
+
+    guardados&lt;/a&gt;&lt;/p&gt;
+    ";
+}
+else
+{
+    echo "
+    Los campos &lt;b&gt;nombre&lt;/b&gt; y &lt;b&gt;email&lt;/b&gt; no pueden estar vacios.&lt;br /&gt;
+    &lt;a href=\"javascript:history.go(-1)\"&gt;Volver&lt;/a&gt;
+    ";
+}
+?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+========================================
+========= registra.php  (3)
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Guardamos los datos en la base de datos&lt;/title&gt;
+&lt;META name='robot' content='noindex, nofollow'&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;?php
+// Recibimos por POST los datos procedentes del formulario
+$nombr = $_POST["nombre"];            // Asi recogemos el nombre desde el formulario
+    $nombre = strip_tags($nombr);    // Eliminamos la etiquetas que puedan existir
+    $n_nombre = strlen($nombre);      // Contamos el numero de caracteres
+$emai = $_POST["email"];            // Asi recogemos el email desde el formulario
+    $email = strip_tags($emai);        // Eliminamos la etiquetas que puedan existir
+             // Validamos el email de manera muy simple, contempla que exista la @, el . y no exista espacios en blanco
+        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            // Email valido, contamos los caracteres
+            $n_email = strlen($email);         // Contamos el numero de caracteres
+        } else {
+            // Email no valido, asignamos 0 al numero de caracteres
+            $n_email = 0;
+        }
+$fecha = date("d-m-Y");        // Asi recogemos la fecha
+$hora = date("H:i");        // Asi recogemos la hora
+$total_car = $n_nombre * $n_email;    // Si alguno de ellos vale 0, $total_car valdrá 0
+if ($total_car &gt;= 1) {
+    // Abrimos la conexion a la base de datos
+    include("../abre_conexion.php");
+         $_GRABAR_SQL = "INSERT INTO $tabla_db1 (nombre,email,fecha, hora) VALUES ('$nombre', '$email', '$fecha', '$hora')";
+    mysql_query($_GRABAR_SQL);
+         // Cerramos la conexion a la base de datos
+    include("../cierra_conexion.php");
+         // Confirmamos que el registro ha sido insertado con exito
+         echo "
+    &lt;p&gt;Los datos han sido guardados con exito.&lt;/p&gt;
+         &lt;p&gt;&lt;a href='javascript:history.go(-1)'&gt;VOLVER ATRÁS&lt;/a&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href='http://www.uterra.com/archcodfuente/demos/id103/lista2.php' title='Clic aquí'&gt;Ver los resgistros
+
+    guardados&lt;/a&gt;&lt;/p&gt;
+    ";
+
+} else {
+         echo "
+    Los campos &lt;b&gt;nombre&lt;/b&gt; y &lt;b&gt;email&lt;/b&gt; no pueden estar vacios.&lt;br /&gt;
+    &lt;a href=\"javascript:history.go(-1)\"&gt;Volver&lt;/a&gt;
+    ";
+}
+?&gt;
+&lt;/body&gt;
 &lt;/html&gt;
 
 </code>
 
     </pre>
 
-  
- 
+
+
          </p>
           </div>
 
 
-  
+
       <div class="col-sm-12 pie ">
         <footer>
-           <p>Dise&ntildeado; por Jes&uacutes; Bola&ntildeo;.<br>
+           <p>Dise&ntildeado por Jes&uacutes Bola&ntildeo.<br>
                 Contactenos en laredsyscom@gmail.com<br>
                 Hecho con Bootstrap 2017<br>
             Todos los Derechos reservados</p>
