@@ -13,4 +13,4 @@ h1,h2,h3,h4,h5,h6 {
 .tamfuente{font-size: 40%;}
 h1{font-size:150%;}
 .row{margin-top: 30px;}
-.hr{border: 1px dotted #278e79;}
+.hr{border: 1px dotted #278e79;margin-top: 2px;margin-bottom: 2px;}
